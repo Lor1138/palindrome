@@ -4,9 +4,15 @@ const inputWord = document.querySelector("#text-input");
 const checkButton = document.querySelector("#check-btn");
 const definitionOutput = document.querySelector("#result-definition")
 
+
+
+
 const isPalindrome = (input) => {
-   const origInput = input;
-   
+  const origInput = input.replace(/[^A-Za-z0-9]/g, " ").toLowerCase();
+  const reversedInput = origInput
+    .split("")
+    .reverse()
+    .join("");
   
   if (input === ' ') {
     alert("Please enter a valid input")
@@ -14,25 +20,19 @@ const isPalindrome = (input) => {
 
   //check if palindrome, make lowercase
   
-  let lowerCaseString = input.toLowerCase()
-    .split("")
-    .reverse()
-    .join("");
-  lowerCaseString.replace(/[A-Za-z]gi/, " ")
-  if (origInput === lowerCaseString) {
-    console.log("is a palindrome")
-    console.log(origInput)
-    console.log(lowerCaseString)
+  
+  //lowerCaseString = lowerCaseString.replace(/[A-Za-z]gi/, " ")
+  if (origInput === reversedInput) {
+    return `${input} is a palindrome`
   } else {
-    console.log(origInput)
-    console.log(lowerCaseString)
-    console.log("is not a palindrome")
+    return `${input} is not a palindrome`
    }
   
 }
 
 checkButton.addEventListener("click", () => {
-  isPalindrome(inputWord.value);
+  const result = isPalindrome(inputWord.value);
+  console.log(result);
   inputWord.value = " "
   
 })
