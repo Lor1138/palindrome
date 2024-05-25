@@ -20,9 +20,9 @@ const isPalindrome = (input) => {
     .join("");
   lowerCaseString.replace(/[A-Za-z]gi/, " ")
   if (origInput === lowerCaseString) {
-    
+    console.log("is a palindrome")
   } else {
-   
+    console.log("is not a palindrome")
    }
   
 }
