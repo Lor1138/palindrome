@@ -8,7 +8,9 @@ const definitionOutput = document.querySelector("#result-definition")
 
 
 const isPalindrome = (input) => {
+  //clean up string
   const origInput = input.replace(/[^A-Za-z0-9]/g, " ").toLowerCase();
+  //reverse the string then return joined
   const reversedInput = origInput
     .split("")
     .reverse()
@@ -17,11 +19,8 @@ const isPalindrome = (input) => {
   if (input === ' ') {
     alert("Please enter a valid input")
   }
-
-  //check if palindrome, make lowercase
   
-  
-  //lowerCaseString = lowerCaseString.replace(/[A-Za-z]gi/, " ")
+  //check if palindrome
   if (origInput === reversedInput) {
     return `${input} is a palindrome`
   } else {
@@ -29,7 +28,6 @@ const isPalindrome = (input) => {
    }
   
 }
-
 checkButton.addEventListener("click", () => {
   const result = isPalindrome(inputWord.value);
   console.log(result);
