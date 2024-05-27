@@ -2,7 +2,8 @@
 const inputContainer = document.querySelector("#palindrome-main");
 const inputWord = document.querySelector("#text-input");
 const checkButton = document.querySelector("#check-btn");
-const definitionOutput = document.querySelector("#result")
+const definitionOutput = document.querySelector("#result");
+const hiddenDiv = document.getElementsByClassName("result-msg")
 
 
 const isPalindrome = (input) => {
@@ -20,9 +21,10 @@ const isPalindrome = (input) => {
   
   //check if palindrome
   if (messagedInput !== reversedInput) {
-    result.textContent = `${input} is not a palindrome`
+    definitionOutput.innerHTML = `<p><strong>${input}</strong> is not a palindrome</p>`
+    hiddenDiv.classList.remove('hidden');
   } else {
-    result.textContent = `${input} is a palindrome`
+    definitionOutput.innerHTML = `<p><strong>${input}</strong> is a palindrome</p>`
    }
   
 }
