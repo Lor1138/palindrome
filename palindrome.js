@@ -9,7 +9,7 @@ const isPalindrome = (input) => {
   //clean up string
   const messagedInput = input.replace(/[^A-Za-z0-9]/g, "").toLowerCase();
   //reverse the string then return joined
-  const reversedInput = origInput
+  const reversedInput = messagedInput
     .split("")
     .reverse()
     .join("");
