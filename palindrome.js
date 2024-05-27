@@ -7,7 +7,7 @@ const definitionOutput = document.querySelector("#result")
 
 const isPalindrome = (input) => {
   //clean up string
-  const origInput = input.replace(/[^A-Za-z0-9]/g, "").toLowerCase();
+  const messagedInput = input.replace(/[^A-Za-z0-9]/g, "").toLowerCase();
   //reverse the string then return joined
   const reversedInput = origInput
     .split("")
@@ -19,7 +19,7 @@ const isPalindrome = (input) => {
   }
   
   //check if palindrome
-  if (origInput !== reversedInput) {
+  if (messagedInput !== reversedInput) {
     result.textContent = `${input} is not a palindrome`
   } else {
     result.textContent = `${input} is a palindrome`
